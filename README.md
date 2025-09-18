@@ -25,8 +25,6 @@ A simple and interactive number guessing game built with plain HTML, CSS, and Ja
 
 No installation needed. Just clone or download the repository and open `index.html` in any modern web browser.
 
-[git clone](https://github.com/Soumyosish/Guessing-a-number-game.git)
-cd [Guessing-a-number-game]
 open index.html
 ---
 
