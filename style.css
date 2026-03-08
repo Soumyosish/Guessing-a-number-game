@@ -12,3 +12,132 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Responsive base layout */
+body {
+  min-height: 100vh;
+  text-align: center;
+  background: url('fun-numbers-seamless-pattern-background-GJPK3N.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: "Poppins", sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.85rem;
+
+  padding: 1rem;
+  color: #111;
+}
+
+/* Typography scales across devices */
+h1 {
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  line-height: 1.2;
+}
+
+p,
+label,
+#feedback {
+  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+}
+
+/* Make form controls responsive and touch-friendly */
+#guessInput,
+button {
+  width: min(92vw, 420px);
+  min-height: 44px;
+  font-size: clamp(1rem, 2.2vw, 1.1rem);
+  border-radius: 10px;
+  border: 1px solid #bbb;
+  padding: 0.6rem 0.75rem;
+}
+
+#guessInput {
+  outline: none;
+}
+
+#guessInput:focus {
+  border-color: #4d7cff;
+  box-shadow: 0 0 0 3px rgba(77, 124, 255, 0.18);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: #2f6df6;
+  color: #fff;
+  font-weight: 600;
+  transition: transform 0.08s ease, opacity 0.15s ease;
+}
+
+button:hover {
+  opacity: 0.95;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+#feedback {
+  width: min(92vw, 520px);
+  min-height: 1.5em;
+  font-weight: 500;
+}
+
+/* Glass card container */
+.game-card {
+  width: min(94vw, 560px);
+  padding: clamp(1rem, 3vw, 1.8rem);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Consistent spacing inside card */
+.game-card > * + * {
+  margin-top: 0.75rem;
+}
+
+/* Keep controls aligned and responsive inside card */
+.game-card #guessInput,
+.game-card button,
+.game-card #feedback {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  body {
+    gap: 0.7rem;
+    padding: 0.8rem;
+  }
+
+  /* fixed backgrounds can be unstable on some mobile browsers */
+  body {
+    background-attachment: scroll;
+  }
+
+  .game-card {
+    width: 96vw;
+    padding: 0.9rem;
+    border-radius: 12px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+  body {
+    gap: 1rem;
+  }
+
+  .game-card {
+    width: min(70vw, 620px);
+  }
+}
